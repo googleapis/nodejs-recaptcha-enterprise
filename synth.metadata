@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
-  "updateTime": "2019-05-10T12:09:57.214799Z",
-=======
-  "updateTime": "2019-05-14T01:55:38.189027Z",
->>>>>>> chore(boostrapping): bootstrapping tests, samples, and docs
+  "updateTime": "2019-05-14T02:01:28.949404Z",
   "sources": [
     {
       "generator": {
@@ -16,24 +12,15 @@
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-<<<<<<< HEAD
-        "sha": "07883be5bf3c3233095e99d8e92b8094f5d7084a",
-        "internalRef": "247530843"
-=======
         "sha": "399f2415aedccc3c28972cf54770b2145d4cf62d",
         "internalRef": "248030680"
->>>>>>> chore(boostrapping): bootstrapping tests, samples, and docs
       }
     },
     {
       "template": {
         "name": "node_library",
         "origin": "synthtool.gcp",
-<<<<<<< HEAD
-        "version": "2019.5.2"
-=======
         "version": "2019.4.10"
->>>>>>> chore(boostrapping): bootstrapping tests, samples, and docs
       }
     }
   ],
