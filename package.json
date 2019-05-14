@@ -50,7 +50,7 @@
     "test-no-cover": "mocha test/*.js",
     "test": "npm run cover",
     "fix": "eslint --fix '**/*.js'",
-    "docs-test": "linkinator docs -r --skip 'www.npmjs.org/package/@google-cloud/recaptcha-enterprise|cloud.google.com/nodejs/docs/reference/recaptcha-enterprise/latest/'",
+    "docs-test": "linkinator docs -r --skip 'www.npmjs.org/package/@google-cloud/recaptcha-enterprise|cloud.google.com/nodejs/docs/reference/recaptcha-enterprise/latest/|github.com/googleapis/nodejs-recaptcha-enterprise/tree/master/samples|https://github.com/googleapis/nodejs-recaptcha-enterprise/blob/master/samples/quickstart.js'",
     "predocs-test": "npm run docs"
   },
   "license": "Apache-2.0",
