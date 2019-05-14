@@ -20,7 +20,7 @@
  * Instantiate the reCAPTCHA Enterprise client and make request.
  * @param {string} projectNumber The project number to use when making requests.
  */
-async function quickstart(projectNumber) {
+async function main(projectNumber) {
   // Create the reCAPTCHA client library.
   const {
     RecaptchaEnterpriseServiceV1Beta1Client,
