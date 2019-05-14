@@ -42,8 +42,7 @@ async function main(projectNumber) {
 }
 // [END recaptcha_enterprise_quickstart]
 
-const args = process.argv.slice(2);
-quickstart(...args).catch(err => {
+main(...process.argv.slice(2)).catch(err => {
   console.error(err);
   process.exitCode = 1;
 });

@@ -23,12 +23,10 @@ const execSync = cmd => cp.execSync(cmd, {encoding: 'utf-8'});
 const cwd = path.join(__dirname, '..');
 
 describe('Quickstart', () => {
-  it('should run quickstart', async () => {
+  it('should run quickstart', () => {
     // TODO: work on setting up a proper integration test.
-    try {
-      await execSync(`node quickstart.js 123456`, {cwd});
-    } catch (err) {
-      assert.include(err.message, "doesn't match parent project number");
-    }
+    assert.throws(() => {
+      execSync(`node quickstart.js 123456`, {cwd});
+    }, /doesn't match parent project number/);
   });
 });
