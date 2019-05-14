@@ -21,17 +21,16 @@
  * @param {string} projectNumber The project number to use when making requests.
  */
 async function quickstart(projectNumber) {
-  // const projectNumber = [PROJECT_NUMBER];
-
   // Create the reCAPTCHA client library.
   const {
     RecaptchaEnterpriseServiceV1Beta1Client,
   } = require('@google-cloud/recaptcha-enterprise');
   const client = new RecaptchaEnterpriseServiceV1Beta1Client();
 
-  // format the path to the project, projectNumber should be
-  // provided.
+  // format the path to the project (it should be prefaced with projects/).
   const formattedParent = client.projectPath(projectNumber);
+  // assessment should contain event with RESPONSE_TOKEN and RECAPTCHA_SITE_KEY:
+  // "{'event': {'token': 'RESPONSE_TOKEN', 'siteKey': 'RECAPTCHA_SITE_KEY'}}"
   const assessment = {};
 
   const request = {
