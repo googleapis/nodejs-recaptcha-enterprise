@@ -4,7 +4,7 @@
     "docker:disable"
   ],
   "pinVersions": false,
-  "rebaseStalePrs": true,
+  "rebaseStalePrs": false,
   "schedule": [
     "after 9am and before 3pm"
   ],
