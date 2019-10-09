@@ -4,6 +4,13 @@
 
 [1]: https://www.npmjs.com/package/@google-cloud/recaptcha-enterprise?activeTab=versions
 
+### [1.2.1](https://www.github.com/googleapis/nodejs-recaptcha-enterprise/compare/v1.2.0...v1.2.1) (2019-10-09)
+
+
+### Bug Fixes
+
+* use compatible version of google-gax ([dfb174a](https://www.github.com/googleapis/nodejs-recaptcha-enterprise/commit/dfb174a))
+
 ## [1.2.0](https://www.github.com/googleapis/nodejs-recaptcha-enterprise/compare/v1.1.4...v1.2.0) (2019-09-16)
 
 
