@@ -69,7 +69,9 @@ class RecaptchaEnterpriseServiceV1Beta1Client {
     const gaxModule = !global.isBrowser && opts.fallback ? gax.fallback : gax;
 
     const servicePath =
-      opts.servicePath || opts.apiEndpoint || this.constructor.servicePath;
+      opts.servicePath ||
+      opts.apiEndpoint ||
+      this.constructor.servicePath;
 
     // Ensure that options include the service address and port.
     opts = Object.assign(
@@ -110,15 +112,11 @@ class RecaptchaEnterpriseServiceV1Beta1Client {
     // For Node.js, pass the path to JSON proto file.
     // For browsers, pass the JSON content.
 
-    const nodejsProtoPath = path.join(
-      __dirname,
-      '..',
-      '..',
-      'protos',
-      'protos.json'
-    );
+    const nodejsProtoPath = path.join(__dirname, '..', '..', 'protos', 'protos.json');
     const protos = gaxGrpc.loadProto(
-      opts.fallback ? require('../../protos/protos.json') : nodejsProtoPath
+      opts.fallback ?
+        require("../../protos/protos.json") :
+        nodejsProtoPath
     );
 
     // This API contains "path templates"; forward-slash-separated
@@ -128,7 +126,9 @@ class RecaptchaEnterpriseServiceV1Beta1Client {
       assessmentPathTemplate: new gaxModule.PathTemplate(
         'projects/{project}/assessments/{assessment}'
       ),
-      projectPathTemplate: new gaxModule.PathTemplate('projects/{project}'),
+      projectPathTemplate: new gaxModule.PathTemplate(
+        'projects/{project}'
+      ),
     };
 
     // Put together the default options sent with requests.
@@ -147,12 +147,9 @@ class RecaptchaEnterpriseServiceV1Beta1Client {
     // Put together the "service stub" for
     // google.cloud.recaptchaenterprise.v1beta1.RecaptchaEnterpriseServiceV1Beta1.
     const recaptchaEnterpriseServiceV1Beta1Stub = gaxGrpc.createStub(
-      opts.fallback
-        ? protos.lookupService(
-            'google.cloud.recaptchaenterprise.v1beta1.RecaptchaEnterpriseServiceV1Beta1'
-          )
-        : protos.google.cloud.recaptchaenterprise.v1beta1
-            .RecaptchaEnterpriseServiceV1Beta1,
+      opts.fallback ?
+        protos.lookupService('google.cloud.recaptchaenterprise.v1beta1.RecaptchaEnterpriseServiceV1Beta1') :
+        protos.google.cloud.recaptchaenterprise.v1beta1.RecaptchaEnterpriseServiceV1Beta1,
       opts
     );
 
@@ -206,7 +203,9 @@ class RecaptchaEnterpriseServiceV1Beta1Client {
    * in this service.
    */
   static get scopes() {
-    return ['https://www.googleapis.com/auth/cloud-platform'];
+    return [
+      'https://www.googleapis.com/auth/cloud-platform',
+    ];
   }
 
   /**
@@ -277,11 +276,10 @@ class RecaptchaEnterpriseServiceV1Beta1Client {
     options = options || {};
     options.otherArgs = options.otherArgs || {};
     options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers[
-      'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
-      parent: request.parent,
-    });
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'parent': request.parent
+      });
 
     return this._innerApiCalls.createAssessment(request, options, callback);
   }
@@ -342,11 +340,10 @@ class RecaptchaEnterpriseServiceV1Beta1Client {
     options = options || {};
     options.otherArgs = options.otherArgs || {};
     options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers[
-      'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
-      name: request.name,
-    });
+    options.otherArgs.headers['x-goog-request-params'] =
+      gax.routingHeader.fromParams({
+        'name': request.name
+      });
 
     return this._innerApiCalls.annotateAssessment(request, options, callback);
   }
@@ -389,7 +386,8 @@ class RecaptchaEnterpriseServiceV1Beta1Client {
    * @returns {String} - A string representing the project.
    */
   matchProjectFromAssessmentName(assessmentName) {
-    return this._pathTemplates.assessmentPathTemplate.match(assessmentName)
+    return this._pathTemplates.assessmentPathTemplate
+      .match(assessmentName)
       .project;
   }
 
@@ -401,7 +399,8 @@ class RecaptchaEnterpriseServiceV1Beta1Client {
    * @returns {String} - A string representing the assessment.
    */
   matchAssessmentFromAssessmentName(assessmentName) {
-    return this._pathTemplates.assessmentPathTemplate.match(assessmentName)
+    return this._pathTemplates.assessmentPathTemplate
+      .match(assessmentName)
       .assessment;
   }
 
@@ -413,8 +412,11 @@ class RecaptchaEnterpriseServiceV1Beta1Client {
    * @returns {String} - A string representing the project.
    */
   matchProjectFromProjectName(projectName) {
-    return this._pathTemplates.projectPathTemplate.match(projectName).project;
+    return this._pathTemplates.projectPathTemplate
+      .match(projectName)
+      .project;
   }
 }
+
 
 module.exports = RecaptchaEnterpriseServiceV1Beta1Client;
