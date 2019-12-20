@@ -18,7 +18,7 @@
 
 import * as protosTypes from '../protos/protos';
 import * as assert from 'assert';
-const recaptchaenterpriseservicev1beta1Module = require('../src/v1beta1');
+const recaptchaenterpriseservicev1beta1Module = require('../src');
 
 const FAKE_STATUS_CODE = 1;
 class FakeError {
@@ -59,29 +59,29 @@ function mockSimpleGrpcMethod(
 describe('v1beta1.RecaptchaEnterpriseServiceV1Beta1Client', () => {
   it('has servicePath', () => {
     const servicePath =
-      recaptchaenterpriseservicev1beta1Module
+      recaptchaenterpriseservicev1beta1Module.v1beta1
         .RecaptchaEnterpriseServiceV1Beta1Client.servicePath;
     assert(servicePath);
   });
   it('has apiEndpoint', () => {
     const apiEndpoint =
-      recaptchaenterpriseservicev1beta1Module
+      recaptchaenterpriseservicev1beta1Module.v1beta1
         .RecaptchaEnterpriseServiceV1Beta1Client.apiEndpoint;
     assert(apiEndpoint);
   });
   it('has port', () => {
     const port =
-      recaptchaenterpriseservicev1beta1Module
+      recaptchaenterpriseservicev1beta1Module.v1beta1
         .RecaptchaEnterpriseServiceV1Beta1Client.port;
     assert(port);
     assert(typeof port === 'number');
   });
   it('should create a client with no option', () => {
-    const client = new recaptchaenterpriseservicev1beta1Module.RecaptchaEnterpriseServiceV1Beta1Client();
+    const client = new recaptchaenterpriseservicev1beta1Module.v1beta1.RecaptchaEnterpriseServiceV1Beta1Client();
     assert(client);
   });
   it('should create a client with gRPC fallback', () => {
-    const client = new recaptchaenterpriseservicev1beta1Module.RecaptchaEnterpriseServiceV1Beta1Client(
+    const client = new recaptchaenterpriseservicev1beta1Module.v1beta1.RecaptchaEnterpriseServiceV1Beta1Client(
       {
         fallback: true,
       }
@@ -90,7 +90,7 @@ describe('v1beta1.RecaptchaEnterpriseServiceV1Beta1Client', () => {
   });
   describe('createAssessment', () => {
     it('invokes createAssessment without error', done => {
-      const client = new recaptchaenterpriseservicev1beta1Module.RecaptchaEnterpriseServiceV1Beta1Client(
+      const client = new recaptchaenterpriseservicev1beta1Module.v1beta1.RecaptchaEnterpriseServiceV1Beta1Client(
         {
           credentials: {client_email: 'bogus', private_key: 'bogus'},
           projectId: 'bogus',
@@ -114,7 +114,7 @@ describe('v1beta1.RecaptchaEnterpriseServiceV1Beta1Client', () => {
     });
 
     it('invokes createAssessment with error', done => {
-      const client = new recaptchaenterpriseservicev1beta1Module.RecaptchaEnterpriseServiceV1Beta1Client(
+      const client = new recaptchaenterpriseservicev1beta1Module.v1beta1.RecaptchaEnterpriseServiceV1Beta1Client(
         {
           credentials: {client_email: 'bogus', private_key: 'bogus'},
           projectId: 'bogus',
@@ -140,7 +140,7 @@ describe('v1beta1.RecaptchaEnterpriseServiceV1Beta1Client', () => {
   });
   describe('annotateAssessment', () => {
     it('invokes annotateAssessment without error', done => {
-      const client = new recaptchaenterpriseservicev1beta1Module.RecaptchaEnterpriseServiceV1Beta1Client(
+      const client = new recaptchaenterpriseservicev1beta1Module.v1beta1.RecaptchaEnterpriseServiceV1Beta1Client(
         {
           credentials: {client_email: 'bogus', private_key: 'bogus'},
           projectId: 'bogus',
@@ -164,7 +164,7 @@ describe('v1beta1.RecaptchaEnterpriseServiceV1Beta1Client', () => {
     });
 
     it('invokes annotateAssessment with error', done => {
-      const client = new recaptchaenterpriseservicev1beta1Module.RecaptchaEnterpriseServiceV1Beta1Client(
+      const client = new recaptchaenterpriseservicev1beta1Module.v1beta1.RecaptchaEnterpriseServiceV1Beta1Client(
         {
           credentials: {client_email: 'bogus', private_key: 'bogus'},
           projectId: 'bogus',
@@ -190,7 +190,7 @@ describe('v1beta1.RecaptchaEnterpriseServiceV1Beta1Client', () => {
   });
   describe('createKey', () => {
     it('invokes createKey without error', done => {
-      const client = new recaptchaenterpriseservicev1beta1Module.RecaptchaEnterpriseServiceV1Beta1Client(
+      const client = new recaptchaenterpriseservicev1beta1Module.v1beta1.RecaptchaEnterpriseServiceV1Beta1Client(
         {
           credentials: {client_email: 'bogus', private_key: 'bogus'},
           projectId: 'bogus',
@@ -214,7 +214,7 @@ describe('v1beta1.RecaptchaEnterpriseServiceV1Beta1Client', () => {
     });
 
     it('invokes createKey with error', done => {
-      const client = new recaptchaenterpriseservicev1beta1Module.RecaptchaEnterpriseServiceV1Beta1Client(
+      const client = new recaptchaenterpriseservicev1beta1Module.v1beta1.RecaptchaEnterpriseServiceV1Beta1Client(
         {
           credentials: {client_email: 'bogus', private_key: 'bogus'},
           projectId: 'bogus',
@@ -240,7 +240,7 @@ describe('v1beta1.RecaptchaEnterpriseServiceV1Beta1Client', () => {
   });
   describe('getKey', () => {
     it('invokes getKey without error', done => {
-      const client = new recaptchaenterpriseservicev1beta1Module.RecaptchaEnterpriseServiceV1Beta1Client(
+      const client = new recaptchaenterpriseservicev1beta1Module.v1beta1.RecaptchaEnterpriseServiceV1Beta1Client(
         {
           credentials: {client_email: 'bogus', private_key: 'bogus'},
           projectId: 'bogus',
@@ -264,7 +264,7 @@ describe('v1beta1.RecaptchaEnterpriseServiceV1Beta1Client', () => {
     });
 
     it('invokes getKey with error', done => {
-      const client = new recaptchaenterpriseservicev1beta1Module.RecaptchaEnterpriseServiceV1Beta1Client(
+      const client = new recaptchaenterpriseservicev1beta1Module.v1beta1.RecaptchaEnterpriseServiceV1Beta1Client(
         {
           credentials: {client_email: 'bogus', private_key: 'bogus'},
           projectId: 'bogus',
@@ -286,7 +286,7 @@ describe('v1beta1.RecaptchaEnterpriseServiceV1Beta1Client', () => {
   });
   describe('updateKey', () => {
     it('invokes updateKey without error', done => {
-      const client = new recaptchaenterpriseservicev1beta1Module.RecaptchaEnterpriseServiceV1Beta1Client(
+      const client = new recaptchaenterpriseservicev1beta1Module.v1beta1.RecaptchaEnterpriseServiceV1Beta1Client(
         {
           credentials: {client_email: 'bogus', private_key: 'bogus'},
           projectId: 'bogus',
@@ -312,7 +312,7 @@ describe('v1beta1.RecaptchaEnterpriseServiceV1Beta1Client', () => {
     });
 
     it('invokes updateKey with error', done => {
-      const client = new recaptchaenterpriseservicev1beta1Module.RecaptchaEnterpriseServiceV1Beta1Client(
+      const client = new recaptchaenterpriseservicev1beta1Module.v1beta1.RecaptchaEnterpriseServiceV1Beta1Client(
         {
           credentials: {client_email: 'bogus', private_key: 'bogus'},
           projectId: 'bogus',
@@ -340,7 +340,7 @@ describe('v1beta1.RecaptchaEnterpriseServiceV1Beta1Client', () => {
   });
   describe('deleteKey', () => {
     it('invokes deleteKey without error', done => {
-      const client = new recaptchaenterpriseservicev1beta1Module.RecaptchaEnterpriseServiceV1Beta1Client(
+      const client = new recaptchaenterpriseservicev1beta1Module.v1beta1.RecaptchaEnterpriseServiceV1Beta1Client(
         {
           credentials: {client_email: 'bogus', private_key: 'bogus'},
           projectId: 'bogus',
@@ -364,7 +364,7 @@ describe('v1beta1.RecaptchaEnterpriseServiceV1Beta1Client', () => {
     });
 
     it('invokes deleteKey with error', done => {
-      const client = new recaptchaenterpriseservicev1beta1Module.RecaptchaEnterpriseServiceV1Beta1Client(
+      const client = new recaptchaenterpriseservicev1beta1Module.v1beta1.RecaptchaEnterpriseServiceV1Beta1Client(
         {
           credentials: {client_email: 'bogus', private_key: 'bogus'},
           projectId: 'bogus',
@@ -390,7 +390,7 @@ describe('v1beta1.RecaptchaEnterpriseServiceV1Beta1Client', () => {
   });
   describe('listKeys', () => {
     it('invokes listKeys without error', done => {
-      const client = new recaptchaenterpriseservicev1beta1Module.RecaptchaEnterpriseServiceV1Beta1Client(
+      const client = new recaptchaenterpriseservicev1beta1Module.v1beta1.RecaptchaEnterpriseServiceV1Beta1Client(
         {
           credentials: {client_email: 'bogus', private_key: 'bogus'},
           projectId: 'bogus',
@@ -418,7 +418,7 @@ describe('v1beta1.RecaptchaEnterpriseServiceV1Beta1Client', () => {
   });
   describe('listKeysStream', () => {
     it('invokes listKeysStream without error', done => {
-      const client = new recaptchaenterpriseservicev1beta1Module.RecaptchaEnterpriseServiceV1Beta1Client(
+      const client = new recaptchaenterpriseservicev1beta1Module.v1beta1.RecaptchaEnterpriseServiceV1Beta1Client(
         {
           credentials: {client_email: 'bogus', private_key: 'bogus'},
           projectId: 'bogus',

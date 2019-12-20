@@ -1,5 +1,5 @@
 {
-  "updateTime": "2019-12-20T22:54:08.115964Z",
+  "updateTime": "2019-12-20T23:47:04.933248Z",
   "sources": [
     {
       "git": {
@@ -130,9 +130,6 @@
     },
     {
       "path": "node_modules/protobufjs/cli/node_modules/espree/package.json"
-    },
-    {
-      "path": "__pycache__/synth.cpython-36.pyc"
     },
     {
       "path": "samples/README.md"
