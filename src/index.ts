@@ -17,7 +17,8 @@
 // ** All changes to this file may be overwritten. **
 
 import * as v1beta1 from './v1beta1';
-const RecaptchaEnterpriseServiceV1Beta1Client = v1beta1.RecaptchaEnterpriseServiceV1Beta1Client;
+const RecaptchaEnterpriseServiceV1Beta1Client =
+  v1beta1.RecaptchaEnterpriseServiceV1Beta1Client;
 export {v1beta1, RecaptchaEnterpriseServiceV1Beta1Client};
 // For compatibility with JavaScript libraries we need to provide this default export:
 // tslint:disable-next-line no-default-export
