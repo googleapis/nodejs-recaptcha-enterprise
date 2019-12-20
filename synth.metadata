@@ -1,5 +1,5 @@
 {
-  "updateTime": "2019-12-20T21:54:20.405024Z",
+  "updateTime": "2019-12-20T22:54:08.115964Z",
   "sources": [
     {
       "git": {
@@ -57,9 +57,6 @@
       "path": "README.md"
     },
     {
-      "path": "package-lock.json"
-    },
-    {
       "path": "tslint.json"
     },
     {
@@ -109,6 +106,33 @@
     },
     {
       "path": "system-test/fixtures/sample/src/index.ts"
+    },
+    {
+      "path": "node_modules/protobufjs/cli/package-lock.json"
+    },
+    {
+      "path": "node_modules/protobufjs/cli/package.json"
+    },
+    {
+      "path": "node_modules/protobufjs/cli/node_modules/acorn/package.json"
+    },
+    {
+      "path": "node_modules/protobufjs/cli/node_modules/minimist/package.json"
+    },
+    {
+      "path": "node_modules/protobufjs/cli/node_modules/semver/package.json"
+    },
+    {
+      "path": "node_modules/protobufjs/cli/node_modules/acorn-jsx/package.json"
+    },
+    {
+      "path": "node_modules/protobufjs/cli/node_modules/acorn-jsx/node_modules/acorn/package.json"
+    },
+    {
+      "path": "node_modules/protobufjs/cli/node_modules/espree/package.json"
+    },
+    {
+      "path": "__pycache__/synth.cpython-36.pyc"
     },
     {
       "path": "samples/README.md"
@@ -172,15 +196,6 @@
     },
     {
       "path": "build/system-test/install.d.ts"
-    },
-    {
-      "path": "build/src/index.js"
-    },
-    {
-      "path": "build/src/index.js.map"
-    },
-    {
-      "path": "build/src/index.d.ts"
     },
     {
       "path": "build/src/v1beta1/recaptcha_enterprise_service_v1_beta1_client.d.ts"
