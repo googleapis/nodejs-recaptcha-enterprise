@@ -62,7 +62,7 @@
     "compile-protos": "compileProtos src",
     "predocs-test": "npm run docs",
     "prepare": "npm run compile",
-    "prelint": "cd samples; npm link ../"
+    "prelint": "cd samples; npm link ../; npm i"
   },
   "license": "Apache-2.0",
   "engines": {
