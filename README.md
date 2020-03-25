@@ -4,7 +4,7 @@
 
 # [Google Cloud reCAPTCHA Enterprise: Node.js Client](https://github.com/googleapis/nodejs-recaptcha-enterprise)
 
-[![release level](https://img.shields.io/badge/release%20level-beta-yellow.svg?style=flat)](https://cloud.google.com/terms/launch-stages)
+[![release level](https://img.shields.io/badge/release%20level-general%20availability%20%28GA%29-brightgreen.svg?style=flat)](https://cloud.google.com/terms/launch-stages)
 [![npm version](https://img.shields.io/npm/v/@google-cloud/recaptcha-enterprise.svg)](https://www.npmjs.org/package/@google-cloud/recaptcha-enterprise)
 [![codecov](https://img.shields.io/codecov/c/github/googleapis/nodejs-recaptcha-enterprise/master.svg?style=flat)](https://codecov.io/gh/googleapis/nodejs-recaptcha-enterprise)
 
@@ -62,9 +62,9 @@ npm install @google-cloud/recaptcha-enterprise
 async function main(projectNumber) {
   // Create the reCAPTCHA client library.
   const {
-    RecaptchaEnterpriseServiceV1Beta1Client,
+    RecaptchaEnterpriseServiceClient,
   } = require('@google-cloud/recaptcha-enterprise');
-  const client = new RecaptchaEnterpriseServiceV1Beta1Client();
+  const client = new RecaptchaEnterpriseServiceClient();
 
   // format the path to the project (it should be prefaced with projects/).
   const formattedParent = client.projectPath(projectNumber);
@@ -98,16 +98,38 @@ has instructions for running the samples.
 The [Google Cloud reCAPTCHA Enterprise Node.js Client API Reference][client-docs] documentation
 also contains samples.
 
+## Supported Node.js Versions
+
+Our client libraries follow the [Node.js release schedule](https://nodejs.org/en/about/releases/).
+Libraries are compatible with all current _active_ and _maintenance_ versions of
+Node.js.
+
+Client libraries targetting some end-of-life versions of Node.js are available, and
+can be installed via npm [dist-tags](https://docs.npmjs.com/cli/dist-tag).
+The dist-tags follow the naming convention `legacy-(version)`.
+
+_Legacy Node.js versions are supported as a best effort:_
+
+* Legacy versions will not be tested in continuous integration.
+* Some security patches may not be able to be backported.
+* Dependencies will not be kept up-to-date, and features will not be backported.
+
+#### Legacy tags available
+
+* `legacy-8`: install client libraries from this dist-tag for versions
+  compatible with Node.js 8.
+
 ## Versioning
 
 This library follows [Semantic Versioning](http://semver.org/).
 
 
+This library is considered to be **General Availability (GA)**. This means it
+is stable; the code surface will not change in backwards-incompatible ways
+unless absolutely necessary (e.g. because of critical security issues) or with
+an extensive deprecation period. Issues and requests against **GA** libraries
+are addressed with the highest priority.
 
-This library is considered to be in **beta**. This means it is expected to be
-mostly stable while we work toward a general availability release; however,
-complete stability is not guaranteed. We will address issues and requests
-against beta libraries with a high priority.
 
 
 

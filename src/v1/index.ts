@@ -1,4 +1,4 @@
-// Copyright 2019 Google LLC
+// Copyright 2020 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -16,24 +16,4 @@
 // ** https://github.com/googleapis/gapic-generator-typescript **
 // ** All changes to this file may be overwritten. **
 
-import * as v1beta1 from './v1beta1';
-import * as v1 from './v1';
-const RecaptchaEnterpriseServiceV1Beta1Client =
-  v1beta1.RecaptchaEnterpriseServiceV1Beta1Client;
-const RecaptchaEnterpriseServiceClient = v1.RecaptchaEnterpriseServiceClient;
-export {
-  v1,
-  v1beta1,
-  RecaptchaEnterpriseServiceV1Beta1Client,
-  RecaptchaEnterpriseServiceClient,
-};
-// For compatibility with JavaScript libraries we need to provide this default export:
-// tslint:disable-next-line no-default-export
-export default {
-  v1,
-  v1beta1,
-  RecaptchaEnterpriseServiceV1Beta1Client,
-  RecaptchaEnterpriseServiceClient,
-};
-import * as protos from '../protos/protos';
-export {protos};
+export {RecaptchaEnterpriseServiceClient} from './recaptcha_enterprise_service_client';
