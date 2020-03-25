@@ -27,6 +27,6 @@ describe('Quickstart', () => {
     // TODO: work on setting up a proper integration test.
     assert.throws(() => {
       execSync(`node quickstart.js 123456`, {cwd});
-    }, /Requested entity was not found/);
+    }, /Permission denied on resource project #123456/);
   });
 });
