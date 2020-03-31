@@ -26,7 +26,7 @@ describe('Quickstart', () => {
   it('should run quickstart', () => {
     // TODO: work on setting up a proper integration test.
     assert.throws(() => {
-      execSync(`node quickstart.js 123456`, {cwd});
+      execSync('node quickstart.js 123456', {cwd});
     }, /Permission denied on resource project #123456/);
   });
 });
