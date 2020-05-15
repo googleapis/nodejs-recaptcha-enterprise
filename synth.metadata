@@ -3,8 +3,8 @@
     {
       "git": {
         "name": ".",
-        "remote": "git@github.com:googleapis/nodejs-recaptcha-enterprise.git",
-        "sha": "05f1acabb9834dd291475598f343ecf7ae62b128"
+        "remote": "https://github.com/googleapis/nodejs-recaptcha-enterprise.git",
+        "sha": "ee1c2509b43b340a731aa98674ebceeab5ccdb2a"
       }
     },
     {
