@@ -30,6 +30,11 @@ import * as path from 'path';
 import {Transform} from 'stream';
 import {RequestType} from 'google-gax/build/src/apitypes';
 import * as protos from '../../protos/protos';
+/**
+ * Client JSON configuration object, loaded from
+ * `src/v1/recaptcha_enterprise_service_client_config.json`.
+ * This file defines retry strategy and timeouts for all API methods in this library.
+ */
 import * as gapicConfig from './recaptcha_enterprise_service_client_config.json';
 
 const version = require('../../../package.json').version;
@@ -83,9 +88,9 @@ export class RecaptchaEnterpriseServiceClient {
    *     your project ID will be detected automatically.
    * @param {string} [options.apiEndpoint] - The domain name of the
    *     API remote host.
-   * @param {gax.ClientConfig} [options.clientConfig] - client configuration override.
-   *     Follows the structure of `recaptcha_enterprise_service_client_config.json`.
-   * @param {boolean} fallback - Use HTTP fallback mode.
+   * @param {gax.ClientConfig} [options.clientConfig] - Client configuration override.
+   *     Follows the structure of {@link gapicConfig}.
+   * @param {boolean} [options.fallback] - Use HTTP fallback mode.
    *     In fallback mode, a special browser-compatible transport implementation is used
    *     instead of gRPC transport. In browser context (if the `window` object is defined)
    *     the fallback mode is enabled automatically; set `options.fallback` to `false`
@@ -99,6 +104,7 @@ export class RecaptchaEnterpriseServiceClient {
       opts?.servicePath || opts?.apiEndpoint || staticMembers.servicePath;
     const port = opts?.port || staticMembers.port;
     const clientConfig = opts?.clientConfig ?? {};
+    // eslint-disable-next-line no-undef
     const fallback =
       opts?.fallback ??
       (typeof window !== 'undefined' && typeof window.fetch !== 'undefined');
@@ -320,7 +326,7 @@ export class RecaptchaEnterpriseServiceClient {
   // -------------------
   createAssessment(
     request: protos.google.cloud.recaptchaenterprise.v1.ICreateAssessmentRequest,
-    options?: gax.CallOptions
+    options?: CallOptions
   ): Promise<
     [
       protos.google.cloud.recaptchaenterprise.v1.IAssessment,
@@ -333,7 +339,7 @@ export class RecaptchaEnterpriseServiceClient {
   >;
   createAssessment(
     request: protos.google.cloud.recaptchaenterprise.v1.ICreateAssessmentRequest,
-    options: gax.CallOptions,
+    options: CallOptions,
     callback: Callback<
       protos.google.cloud.recaptchaenterprise.v1.IAssessment,
       | protos.google.cloud.recaptchaenterprise.v1.ICreateAssessmentRequest
@@ -375,7 +381,7 @@ export class RecaptchaEnterpriseServiceClient {
   createAssessment(
     request: protos.google.cloud.recaptchaenterprise.v1.ICreateAssessmentRequest,
     optionsOrCallback?:
-      | gax.CallOptions
+      | CallOptions
       | Callback<
           protos.google.cloud.recaptchaenterprise.v1.IAssessment,
           | protos.google.cloud.recaptchaenterprise.v1.ICreateAssessmentRequest
@@ -401,12 +407,12 @@ export class RecaptchaEnterpriseServiceClient {
     ]
   > | void {
     request = request || {};
-    let options: gax.CallOptions;
+    let options: CallOptions;
     if (typeof optionsOrCallback === 'function' && callback === undefined) {
       callback = optionsOrCallback;
       options = {};
     } else {
-      options = optionsOrCallback as gax.CallOptions;
+      options = optionsOrCallback as CallOptions;
     }
     options = options || {};
     options.otherArgs = options.otherArgs || {};
@@ -421,7 +427,7 @@ export class RecaptchaEnterpriseServiceClient {
   }
   annotateAssessment(
     request: protos.google.cloud.recaptchaenterprise.v1.IAnnotateAssessmentRequest,
-    options?: gax.CallOptions
+    options?: CallOptions
   ): Promise<
     [
       protos.google.cloud.recaptchaenterprise.v1.IAnnotateAssessmentResponse,
@@ -434,7 +440,7 @@ export class RecaptchaEnterpriseServiceClient {
   >;
   annotateAssessment(
     request: protos.google.cloud.recaptchaenterprise.v1.IAnnotateAssessmentRequest,
-    options: gax.CallOptions,
+    options: CallOptions,
     callback: Callback<
       protos.google.cloud.recaptchaenterprise.v1.IAnnotateAssessmentResponse,
       | protos.google.cloud.recaptchaenterprise.v1.IAnnotateAssessmentRequest
@@ -477,7 +483,7 @@ export class RecaptchaEnterpriseServiceClient {
   annotateAssessment(
     request: protos.google.cloud.recaptchaenterprise.v1.IAnnotateAssessmentRequest,
     optionsOrCallback?:
-      | gax.CallOptions
+      | CallOptions
       | Callback<
           protos.google.cloud.recaptchaenterprise.v1.IAnnotateAssessmentResponse,
           | protos.google.cloud.recaptchaenterprise.v1.IAnnotateAssessmentRequest
@@ -503,12 +509,12 @@ export class RecaptchaEnterpriseServiceClient {
     ]
   > | void {
     request = request || {};
-    let options: gax.CallOptions;
+    let options: CallOptions;
     if (typeof optionsOrCallback === 'function' && callback === undefined) {
       callback = optionsOrCallback;
       options = {};
     } else {
-      options = optionsOrCallback as gax.CallOptions;
+      options = optionsOrCallback as CallOptions;
     }
     options = options || {};
     options.otherArgs = options.otherArgs || {};
@@ -523,7 +529,7 @@ export class RecaptchaEnterpriseServiceClient {
   }
   createKey(
     request: protos.google.cloud.recaptchaenterprise.v1.ICreateKeyRequest,
-    options?: gax.CallOptions
+    options?: CallOptions
   ): Promise<
     [
       protos.google.cloud.recaptchaenterprise.v1.IKey,
@@ -533,7 +539,7 @@ export class RecaptchaEnterpriseServiceClient {
   >;
   createKey(
     request: protos.google.cloud.recaptchaenterprise.v1.ICreateKeyRequest,
-    options: gax.CallOptions,
+    options: CallOptions,
     callback: Callback<
       protos.google.cloud.recaptchaenterprise.v1.IKey,
       | protos.google.cloud.recaptchaenterprise.v1.ICreateKeyRequest
@@ -575,7 +581,7 @@ export class RecaptchaEnterpriseServiceClient {
   createKey(
     request: protos.google.cloud.recaptchaenterprise.v1.ICreateKeyRequest,
     optionsOrCallback?:
-      | gax.CallOptions
+      | CallOptions
       | Callback<
           protos.google.cloud.recaptchaenterprise.v1.IKey,
           | protos.google.cloud.recaptchaenterprise.v1.ICreateKeyRequest
@@ -598,12 +604,12 @@ export class RecaptchaEnterpriseServiceClient {
     ]
   > | void {
     request = request || {};
-    let options: gax.CallOptions;
+    let options: CallOptions;
     if (typeof optionsOrCallback === 'function' && callback === undefined) {
       callback = optionsOrCallback;
       options = {};
     } else {
-      options = optionsOrCallback as gax.CallOptions;
+      options = optionsOrCallback as CallOptions;
     }
     options = options || {};
     options.otherArgs = options.otherArgs || {};
@@ -618,7 +624,7 @@ export class RecaptchaEnterpriseServiceClient {
   }
   getKey(
     request: protos.google.cloud.recaptchaenterprise.v1.IGetKeyRequest,
-    options?: gax.CallOptions
+    options?: CallOptions
   ): Promise<
     [
       protos.google.cloud.recaptchaenterprise.v1.IKey,
@@ -628,7 +634,7 @@ export class RecaptchaEnterpriseServiceClient {
   >;
   getKey(
     request: protos.google.cloud.recaptchaenterprise.v1.IGetKeyRequest,
-    options: gax.CallOptions,
+    options: CallOptions,
     callback: Callback<
       protos.google.cloud.recaptchaenterprise.v1.IKey,
       | protos.google.cloud.recaptchaenterprise.v1.IGetKeyRequest
@@ -668,7 +674,7 @@ export class RecaptchaEnterpriseServiceClient {
   getKey(
     request: protos.google.cloud.recaptchaenterprise.v1.IGetKeyRequest,
     optionsOrCallback?:
-      | gax.CallOptions
+      | CallOptions
       | Callback<
           protos.google.cloud.recaptchaenterprise.v1.IKey,
           | protos.google.cloud.recaptchaenterprise.v1.IGetKeyRequest
@@ -691,12 +697,12 @@ export class RecaptchaEnterpriseServiceClient {
     ]
   > | void {
     request = request || {};
-    let options: gax.CallOptions;
+    let options: CallOptions;
     if (typeof optionsOrCallback === 'function' && callback === undefined) {
       callback = optionsOrCallback;
       options = {};
     } else {
-      options = optionsOrCallback as gax.CallOptions;
+      options = optionsOrCallback as CallOptions;
     }
     options = options || {};
     options.otherArgs = options.otherArgs || {};
@@ -711,7 +717,7 @@ export class RecaptchaEnterpriseServiceClient {
   }
   updateKey(
     request: protos.google.cloud.recaptchaenterprise.v1.IUpdateKeyRequest,
-    options?: gax.CallOptions
+    options?: CallOptions
   ): Promise<
     [
       protos.google.cloud.recaptchaenterprise.v1.IKey,
@@ -721,7 +727,7 @@ export class RecaptchaEnterpriseServiceClient {
   >;
   updateKey(
     request: protos.google.cloud.recaptchaenterprise.v1.IUpdateKeyRequest,
-    options: gax.CallOptions,
+    options: CallOptions,
     callback: Callback<
       protos.google.cloud.recaptchaenterprise.v1.IKey,
       | protos.google.cloud.recaptchaenterprise.v1.IUpdateKeyRequest
@@ -763,7 +769,7 @@ export class RecaptchaEnterpriseServiceClient {
   updateKey(
     request: protos.google.cloud.recaptchaenterprise.v1.IUpdateKeyRequest,
     optionsOrCallback?:
-      | gax.CallOptions
+      | CallOptions
       | Callback<
           protos.google.cloud.recaptchaenterprise.v1.IKey,
           | protos.google.cloud.recaptchaenterprise.v1.IUpdateKeyRequest
@@ -786,12 +792,12 @@ export class RecaptchaEnterpriseServiceClient {
     ]
   > | void {
     request = request || {};
-    let options: gax.CallOptions;
+    let options: CallOptions;
     if (typeof optionsOrCallback === 'function' && callback === undefined) {
       callback = optionsOrCallback;
       options = {};
     } else {
-      options = optionsOrCallback as gax.CallOptions;
+      options = optionsOrCallback as CallOptions;
     }
     options = options || {};
     options.otherArgs = options.otherArgs || {};
@@ -806,7 +812,7 @@ export class RecaptchaEnterpriseServiceClient {
   }
   deleteKey(
     request: protos.google.cloud.recaptchaenterprise.v1.IDeleteKeyRequest,
-    options?: gax.CallOptions
+    options?: CallOptions
   ): Promise<
     [
       protos.google.protobuf.IEmpty,
@@ -816,7 +822,7 @@ export class RecaptchaEnterpriseServiceClient {
   >;
   deleteKey(
     request: protos.google.cloud.recaptchaenterprise.v1.IDeleteKeyRequest,
-    options: gax.CallOptions,
+    options: CallOptions,
     callback: Callback<
       protos.google.protobuf.IEmpty,
       | protos.google.cloud.recaptchaenterprise.v1.IDeleteKeyRequest
@@ -856,7 +862,7 @@ export class RecaptchaEnterpriseServiceClient {
   deleteKey(
     request: protos.google.cloud.recaptchaenterprise.v1.IDeleteKeyRequest,
     optionsOrCallback?:
-      | gax.CallOptions
+      | CallOptions
       | Callback<
           protos.google.protobuf.IEmpty,
           | protos.google.cloud.recaptchaenterprise.v1.IDeleteKeyRequest
@@ -879,12 +885,12 @@ export class RecaptchaEnterpriseServiceClient {
     ]
   > | void {
     request = request || {};
-    let options: gax.CallOptions;
+    let options: CallOptions;
     if (typeof optionsOrCallback === 'function' && callback === undefined) {
       callback = optionsOrCallback;
       options = {};
     } else {
-      options = optionsOrCallback as gax.CallOptions;
+      options = optionsOrCallback as CallOptions;
     }
     options = options || {};
     options.otherArgs = options.otherArgs || {};
@@ -900,7 +906,7 @@ export class RecaptchaEnterpriseServiceClient {
 
   listKeys(
     request: protos.google.cloud.recaptchaenterprise.v1.IListKeysRequest,
-    options?: gax.CallOptions
+    options?: CallOptions
   ): Promise<
     [
       protos.google.cloud.recaptchaenterprise.v1.IKey[],
@@ -910,7 +916,7 @@ export class RecaptchaEnterpriseServiceClient {
   >;
   listKeys(
     request: protos.google.cloud.recaptchaenterprise.v1.IListKeysRequest,
-    options: gax.CallOptions,
+    options: CallOptions,
     callback: PaginationCallback<
       protos.google.cloud.recaptchaenterprise.v1.IListKeysRequest,
       | protos.google.cloud.recaptchaenterprise.v1.IListKeysResponse
@@ -959,7 +965,7 @@ export class RecaptchaEnterpriseServiceClient {
   listKeys(
     request: protos.google.cloud.recaptchaenterprise.v1.IListKeysRequest,
     optionsOrCallback?:
-      | gax.CallOptions
+      | CallOptions
       | PaginationCallback<
           protos.google.cloud.recaptchaenterprise.v1.IListKeysRequest,
           | protos.google.cloud.recaptchaenterprise.v1.IListKeysResponse
@@ -982,12 +988,12 @@ export class RecaptchaEnterpriseServiceClient {
     ]
   > | void {
     request = request || {};
-    let options: gax.CallOptions;
+    let options: CallOptions;
     if (typeof optionsOrCallback === 'function' && callback === undefined) {
       callback = optionsOrCallback;
       options = {};
     } else {
-      options = optionsOrCallback as gax.CallOptions;
+      options = optionsOrCallback as CallOptions;
     }
     options = options || {};
     options.otherArgs = options.otherArgs || {};
@@ -1028,7 +1034,7 @@ export class RecaptchaEnterpriseServiceClient {
    */
   listKeysStream(
     request?: protos.google.cloud.recaptchaenterprise.v1.IListKeysRequest,
-    options?: gax.CallOptions
+    options?: CallOptions
   ): Transform {
     request = request || {};
     options = options || {};
@@ -1081,7 +1087,7 @@ export class RecaptchaEnterpriseServiceClient {
    */
   listKeysAsync(
     request?: protos.google.cloud.recaptchaenterprise.v1.IListKeysRequest,
-    options?: gax.CallOptions
+    options?: CallOptions
   ): AsyncIterable<protos.google.cloud.recaptchaenterprise.v1.IKey> {
     request = request || {};
     options = options || {};
