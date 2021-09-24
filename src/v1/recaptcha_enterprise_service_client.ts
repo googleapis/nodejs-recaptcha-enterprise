@@ -1239,7 +1239,8 @@ export class RecaptchaEnterpriseServiceClient {
       gax.routingHeader.fromParams({
         parent: request.parent || '',
       });
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listKeys'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listKeys.createStream(
       this.innerApiCalls.listKeys as gax.GaxCall,
@@ -1292,7 +1293,8 @@ export class RecaptchaEnterpriseServiceClient {
         parent: request.parent || '',
       });
     options = options || {};
-    const callSettings = new gax.CallSettings(options);
+    const defaultCallSettings = this._defaults['listKeys'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
     return this.descriptors.page.listKeys.asyncIterate(
       this.innerApiCalls['listKeys'] as GaxCall,
