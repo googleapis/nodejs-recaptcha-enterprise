@@ -12,5 +12,5 @@
   "name": "recaptcha-enterprise",
   "issue_tracker": "",
   "api_shortname": "recaptcha-enterprise",
-  "library_type": ""
+  "library_type": "GAPIC_AUTO"
 }
