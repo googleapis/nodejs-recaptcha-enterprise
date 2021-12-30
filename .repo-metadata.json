@@ -11,6 +11,6 @@
   "requires_billing": true,
   "name": "recaptcha-enterprise",
   "issue_tracker": "https://github.com/googleapis/nodejs-recaptcha-enterprise/issues",
-  "api_shortname": "recaptcha-enterprise",
+  "api_shortname": "recaptchaenterprise",
   "library_type": "GAPIC_AUTO"
 }
