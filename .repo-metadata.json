@@ -10,7 +10,7 @@
   "product_documentation": "https://cloud.google.com/recaptcha-enterprise/docs/",
   "requires_billing": true,
   "name": "recaptcha-enterprise",
-  "issue_tracker": "",
+  "issue_tracker": "https://github.com/googleapis/nodejs-recaptcha-enterprise/issues",
   "api_shortname": "recaptcha-enterprise",
   "library_type": "GAPIC_AUTO"
 }
