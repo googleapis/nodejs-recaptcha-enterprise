@@ -14,7 +14,6 @@
 
 'use strict';
 
-// [START recaptcha_enterprise_quickstart]
 /**
  * Instantiate the reCAPTCHA Enterprise client and make request.
  * @param {string} projectNumber The project number to use when making requests.
@@ -39,7 +38,6 @@ async function main(projectNumber) {
 
   await client.createAssessment(request);
 }
-// [END recaptcha_enterprise_quickstart]
 
 main(...process.argv.slice(2)).catch(err => {
   console.error(err);
