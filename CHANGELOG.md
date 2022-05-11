@@ -4,6 +4,19 @@
 
 [1]: https://www.npmjs.com/package/@google-cloud/recaptcha-enterprise?activeTab=versions
 
+## [3.0.0](https://github.com/googleapis/nodejs-recaptcha-enterprise/compare/v2.5.0...v3.0.0) (2022-05-11)
+
+
+### ⚠ BREAKING CHANGES
+
+* rename parent to project in SearchRelatedAccountGroupMembershipsRequest (#370)
+* remove key management API (#366)
+
+### Bug Fixes
+
+* remove key management API ([#366](https://github.com/googleapis/nodejs-recaptcha-enterprise/issues/366)) ([44a5a4b](https://github.com/googleapis/nodejs-recaptcha-enterprise/commit/44a5a4be5ee8fedd9258d28cd2151f15961dba5c))
+* rename parent to project in SearchRelatedAccountGroupMembershipsRequest ([#370](https://github.com/googleapis/nodejs-recaptcha-enterprise/issues/370)) ([aad0883](https://github.com/googleapis/nodejs-recaptcha-enterprise/commit/aad0883aa839e16ab76c3057678cf7583652466a))
+
 ## [2.5.0](https://www.github.com/googleapis/nodejs-recaptcha-enterprise/compare/v2.4.0...v2.5.0) (2021-12-10)
 
 
