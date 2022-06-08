@@ -22,7 +22,7 @@ async function createAssessment(projectId, recaptchSiteKey, token, recaptchaActi
     }
 
     // Check if the expected action was executed.
-    if (!response.tokenProperties.action != recaptchaAction) {
+    if (response.tokenProperties.action != recaptchaAction) {
         throw new Error('The action attribute in your reCAPTCHA tag does not match the action you are expecting to score. Please check your action attribute !');
     }
 
@@ -35,10 +35,10 @@ async function createAssessment(projectId, recaptchSiteKey, token, recaptchaActi
 
     console.log(`The reCAPTCHA score for this token is: ${response.riskAnalysis.score}`);
 
-    let verdict = 'Not a human';
+    let verdict = 'Human';
 
     if (response.riskAnalysis.score < THRESHHOLD_SCORE) {
-        verdict = 'Human';
+        verdict = 'Not a human';
     }
 
     return {

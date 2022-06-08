@@ -1,42 +1,83 @@
-function assessRecaptcha(obj, event) {
+const createAssessmentRequest = (token, action, sitekey) => {
+  return fetch("/create_assessment",
+    {
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        method: "POST",
+        body: JSON.stringify({token, action, sitekey})
+    }
+  )
+}
+
+function assessRecaptcha(element, event) {
   event.preventDefault();
-  grecaptcha.enterprise.ready(function () {
-    grecaptcha.enterprise.execute(obj.getAttribute("data-sitekey"), {action: obj.getAttribute("data-action")}).then(function (token) {
-      console.log(token);
-      httpRequest(token, obj.getAttribute("data-action"), obj.getAttribute("data-sitekey"));
+  grecaptcha.enterprise.ready(() => {
+    grecaptcha.enterprise.execute(
+      element.getAttribute("data-sitekey"), 
+      {
+        action: element.getAttribute("data-action")
+      }
+    )
+    .then(token => {
+      return createAssessmentRequest(
+        token, 
+        element.getAttribute("data-action"), 
+        element.getAttribute("data-sitekey"),
+      )
+    })
+    .then(res => res.json())
+    .then(res => {
+      if (!res) {
+        addMessage('Error: request without data');
+        return;
+      }
+  
+      if (!res.error && res.data) {
+        document.getElementById("scoreButton").innerText = res.data.score;
+        return;
+      }
+  
+      if (res.error) {
+        addMessage(`Server error: ${res.error}`);
+      }
+  
+    })
+    .catch(res => {
+      addMessage(`Server error: ${res}`);
     });
   });
 }
 
-
-function httpRequest(token, action, sitekey) {
-  var request = new XMLHttpRequest();
-  request.onreadystatechange= function () {
-      if (request.readyState === 4) {
-        if (request.status === 0 || (request.status >= 200 && request.status < 400)) {
-          json_data = JSON.parse(request.response);
-              console.log(json_data);
-              if (json_data["success"] === "true") {
-                document.getElementById("scoreButton").innerText = json_data["data"]["score"];
-                // document.getElementById("recaptcha_form").submit();
-              }
-          } else {
-            addMessage("Got Internal error...");
-            console.log(json_data["data"]["error_msg"]);
-          }
-      }
-  };
-  var url = "/create_assessment"
-  var json_data = JSON.stringify({"recaptcha_cred":{ "token": token, "action": action, "sitekey": sitekey}});
-  console.log(json_data);
-  request.open("POST", url)
-  request.setRequestHeader("Content-Type", "application/txt;charset=UTF-8");
-  request.send(json_data);
-}
-
 var verifyCallback = function(token) {
   var recaptchaDiv = document.getElementById('recaptcha_render_div');
-  httpRequest(token, recaptchaDiv.getAttribute("data-action"), recaptchaDiv.getAttribute("data-sitekey"));
+
+  createAssessmentRequest(
+    token, 
+    recaptchaDiv.getAttribute("data-action"), 
+    recaptchaDiv.getAttribute("data-sitekey"),
+  )
+  .then(res => res.json())
+  .then(res => {
+    if (!res) {
+      addMessage('Error: request without data');
+      return;
+    }
+
+    if (!res.error && res.data) {
+      document.getElementById("scoreButton").innerText = res.data.score;
+      return;
+    }
+
+    if (res.error) {
+      addMessage(`Server error: ${res.error}`);
+    }
+
+  })
+  .catch(res => {
+    addMessage(`Server error: ${res}`);
+  });
 };
 
 

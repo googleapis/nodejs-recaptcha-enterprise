@@ -14,12 +14,10 @@ gcloud alpha recaptcha keys create --display-name=demo-recaptcha-checkbox-key --
 export CHECKBOX_SITE_KEY=$(cat recaptchacheckboxkeyfile | sed -n -e 's/.*Created \[\([0-9a-zA-Z_-]\+\)\].*/\1/p')
 
 # Docker compose up
-DOCKER_COMPOSE="/usr/local/bin/docker-compose -f $HOME/cloudshell_open/python-recaptcha-enterprise/samples/demosite/docker-compose.yaml up --build"
+DOCKER_COMPOSE="/usr/local/bin/docker-compose -f $HOME/cloudshell_open/nodejs-recaptcha-enterprise/samples/demosite/docker-compose.yaml up --build"
 $DOCKER_COMPOSE
 DOCKER_COMPOSE_RESULT=$?
 if [[ $DOCKER_COMPOSE_RESULT == *"error"* ]];
 then
-  echo "Setting CloudSdk to Python2 due to gcloud openssl issue"
-  export CLOUDSDK_PYTHON=python2
-  $DOCKER_COMPOSE
+  echo "Deployment error"
 fi

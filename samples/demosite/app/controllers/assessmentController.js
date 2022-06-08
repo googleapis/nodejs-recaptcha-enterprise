@@ -2,15 +2,23 @@ const {createAssessment} = require('../recaptcha/createAssessment');
 
 const assessmentController = async (req, res) => {
     try {
-        await createAssessment(
+        const assessmentData = await createAssessment(
             process.env.GOOGLE_CLOUD_PROJECT,
-            req.body.recaptcha_cred,
+            req.body.sitekey,
+            req.body.token,
+            req.body.action,
         );
-    } catch(e) {
-        console.log(e);
-    }
 
-    return {}
+        res.json({
+            error: null,
+            data: assessmentData,
+        });
+    } catch(e) {
+        res.json({
+            error: e.toString(),
+            data: null
+        });
+    }
 }
 
 module.exports = {
